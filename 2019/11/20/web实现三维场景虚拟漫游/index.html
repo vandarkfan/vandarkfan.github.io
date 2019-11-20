@@ -6,20 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>processing 写的规律图形运动 | Hexo</title>
+  <title>web实现三维场景虚拟漫游 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="processing 写的规律图形运动也是第一次用processing写图形，期间参考了别人的做法，废话不多说，直接开始">
+  <meta name="description" content="WebGL创建模型利用WebGL构造一个模型，可以在通过浏览器够从各个角度观察此模型。有简单交互功能。简单的说就是构造一个网页，可以在浏览器里实现虚拟漫游">
 <meta property="og:type" content="article">
-<meta property="og:title" content="processing 写的规律图形运动">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;19&#x2F;processing%20%E5%86%99%E7%9A%84%E8%A7%84%E5%BE%8B%E5%9B%BE%E5%BD%A2%E8%BF%90%E5%8A%A8&#x2F;index.html">
+<meta property="og:title" content="web实现三维场景虚拟漫游">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;20&#x2F;web%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF%E8%99%9A%E6%8B%9F%E6%BC%AB%E6%B8%B8&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="processing 写的规律图形运动也是第一次用processing写图形，期间参考了别人的做法，废话不多说，直接开始">
+<meta property="og:description" content="WebGL创建模型利用WebGL构造一个模型，可以在通过浏览器够从各个角度观察此模型。有简单交互功能。简单的说就是构造一个网页，可以在浏览器里实现虚拟漫游">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191016200226791.gif">
-<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191016200627537.gif">
-<meta property="og:updated_time" content="2019-11-19T08:57:46.075Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112016241610.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162419249.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;201911201624314.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162447690.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162455284.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162607667.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162622416.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112016263788.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162652886.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162705505.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162816119.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112016283616.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162855235.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191120162911801.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-11-20T08:33:01.894Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191016200226791.gif">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112016241610.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -155,46 +167,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-processing 写的规律图形运动" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-web实现三维场景虚拟漫游" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      processing 写的规律图形运动
+      web实现三维场景虚拟漫游
     </h1>
   
 
         
-        <a href="/2019/11/19/processing%20%E5%86%99%E7%9A%84%E8%A7%84%E5%BE%8B%E5%9B%BE%E5%BD%A2%E8%BF%90%E5%8A%A8/" class="archive-article-date">
-  	<time datetime="2019-11-19T08:01:11.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
+        <a href="/2019/11/20/web%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF%E8%99%9A%E6%8B%9F%E6%BC%AB%E6%B8%B8/" class="archive-article-date">
+  	<time datetime="2019-11-20T08:32:15.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="processing-写的规律图形运动"><a href="#processing-写的规律图形运动" class="headerlink" title="processing 写的规律图形运动"></a>processing 写的规律图形运动</h1><p>也是第一次用processing写图形，期间参考了别人的做法，废话不多说，直接开始</p>
-  <a id="more"></a>我原本是准备完成这一张图
+        <h2 id="WebGL创建模型"><a href="#WebGL创建模型" class="headerlink" title="WebGL创建模型"></a>WebGL创建模型</h2><p>利用WebGL构造一个模型，可以在通过浏览器够从各个角度观察此模型。有简单交互功能。简单的说就是构造一个网页，可以在浏览器里实现虚拟漫游  <a id="more"></a></p>
+<p>结果：<br>运行主画面<br>1.网页一打开出现“林间小屋”界面，部分草一直摇动，并伴随背景音乐播放。<img src="https://img-blog.csdnimg.cn/2019112016241610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20191120162419249.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>  2.按钮：<br>（1）点击“背景”按钮，可以切换背景。一共有三种背景。<br>（2）点击“音乐”按钮，可以切换音乐。一共有三首音乐及无音乐四种状态。<br>（3）点击“雾气”按钮，可以切换雾气状态。一共有没有雾气（网页一打开的状态）、有薄雾、薄雾渐变到浓雾、浓雾渐变到薄雾四种状态。<br>3.开关门：按下键盘“1”，门打开；再按一次键盘“1”，门关上。<br>4.漫游：<br>（1）按下键盘“Z”，向右旋转；按下键盘“X”，向左旋转。<br>（2）按下键盘“C”，向上抬头；按下键盘“V”,向下低头。<br>（3）按下键盘“W”，向前平移；按下键盘“S”，向后平移。<br>（4）鼠标滑轮向前滚动，快速向前平移；鼠标滑轮向后滚动，快速向后平移。<br>（5）按下键盘“A”，向左平移；按下键盘“D”，向右平移。<br>（6）按下键盘“Q”，向上平移；按下键盘“E”，向下平移。<br>（7）按下键盘“B”，跳跃。<br>（注：各类平移均设置了边界值，防止出场景。）<br>5.房子内部：<br><img src="https://img-blog.csdnimg.cn/201911201624314.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>左边墙上有个时钟（下左），时钟的指针会走动；右边墙上有一张海报（下右）。<br><img src="https://img-blog.csdnimg.cn/20191120162447690.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191120162455284.png" alt="在这里插入图片描述"><br>  6.视频：双击鼠标左键或者鼠标左键单击电视，房子中央电视会播放视频。一共有三个视频和无视频播放四种状态。<br>7.窗口自适应：改变窗口大小，窗口可以自适应。<br>3.2设计结构<br>  <img src="https://img-blog.csdnimg.cn/20191120162607667.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191120162622416.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2019112016263788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191120162652886.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191120162705505.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3.3主要代码<br>1.fbx模型：利用FBXLoader.js和inflate.min.js。<br>通过FBXLoader()函数导入模型<br>var loader = new THREE.FBXLoader();<br>loader.load(‘xxx/xxx.fbx’, function (object)<br>{<br>    object.mixer = new THREE.AnimationMixer(object);<br>    mixers.push(object.mixer);<br>    var action = object.mixer.clipAction(object.animations[0]);<br>    action.play();<br>    object.traverse(function (child)<br>    {<br>        if (child.isMesh)<br>        {<br>            child.castShadow = true;<br>            child.receiveShadow = true;<br>        }<br>    });<br>    scene.add(object);<br>});<br>通过update()函数控制模型动画的频率。<br>mixers[0].update(clock.getDelta());<br>   2.天空盒：加载一个大正方体，贴上图片。<br>   3.视频、音频播放：<br>作为网页的资源加载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio id=<span class="string">"xxx"</span> autoplay loop style=<span class="string">"display: none;"</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">source</span> src=<span class="string">"xxx.mp3"</span>&gt;&lt;/<span class="built_in">source</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">source</span> src=<span class="string">"xxx.ogg"</span>&gt;&lt;/<span class="built_in">source</span>&gt;</span><br><span class="line">&lt;/audio&gt;</span><br><span class="line">&lt;video id=<span class="string">"xxx"</span> loop style=<span class="string">"display:none"</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">source</span> src=<span class="string">"xxx.ogv"</span> <span class="built_in">type</span>=<span class="string">"video/ogg"</span>&gt;</span><br><span class="line">    &lt;<span class="built_in">source</span> src=<span class="string">"xxx.mp4"</span> <span class="built_in">type</span>=<span class="string">"video/mp4"</span>&gt;</span><br><span class="line">&lt;/video&gt;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/20191016200226791.gif" alt="在这里插入图片描述"><br>不过做的途中出现了点问题，然后我又想实现点花里胡哨的的效果，结果就变成了这个样子<br><img src="https://img-blog.csdnimg.cn/20191016200627537.gif" alt="在这里插入图片描述"><br>好的，我知道这两个完全不像，其实是我数学有点算不明白。<br>下面一点一点说明</p>
-<p>原图分析：第一个图实际上有这么几个方面<br>1.旋转<br>2.旋转的同时，每个点都在沿着直线简谐运动<br>3.时间要卡的很准，否则就是混乱的<br>4.运动模糊</p>
-<p>接下来是我做的过程<br>我不喜欢模糊的感觉，我喜欢拖尾的感觉，然后查找别人的代码，知道了大概点运动的时候拖尾，而且是两层该怎么处理（一层是黑，一层是变色）。</p>
-<p>刚开始我是考虑拖尾的问题，喜欢研究这些花哨的。<br>这样实现的。<br>class Particle {<br>  ArrayList<PVector> points = new ArrayList<PVector>();</p>
-<p>  void draw(int k) {<br>    stroke(30);<br>    for (int i = points.size()-1; i &gt; 0; i–) {<br>      PVector l = points.get(i);<br>      PVector l2 = points.get(i-1);<br>      strokeWeight(map(i, 0, points.size(), 0, 20));<br>      line(l.x, l.y, l2.x, l2.y);<br>    }<br>    //hei<br>    for (int i = points.size()-1; i &gt; 0; i–) {<br>      PVector l = points.get(i);<br>      PVector l2 = points.get(i-1);<br>       stroke(map(i, points.size()-1, 0, k<em>20%255+80, 0), 255-k, k</em>17%255);<br>        strokeWeight(map(i, 0, points.size(), 0, 10));<br>      line(l.x, l.y, l2.x, l2.y);<br>    }//hong<br>  }</p>
-<p>  void move(PVector loc) {<br>    points.add(loc);<br>    if (points.size() &gt; 10) {<br>      points.remove(0);<br>    }<br>  }<br>}<br>这个是点的定义，这个拖尾的主要方式就是把点连成线，然后点的大小和颜色改变，做成水滴的感觉（不过上面那是蝌蚪的感觉，我会说明为啥的）</p>
-<p>下面是线的定义，就是如何排列这一个一个点。<br>class Link {<br>  Particle p;</p>
-<p>  int i;</p>
-<p>  Link(int i) {<br>    this.i = i;<br>    p = new Particle();<br>//    p2 = new Particle();<br>  }</p>
-<p>  void draw(int k) {<br>    p.draw(k);<br>//    p2.draw();<br>  }<br>//100<em>sin(frameCount)<br>  void move() {<br>    PVector loc;<br>    if((t/180)%2==1 &amp;&amp; ((i/24)==0 || (i/24)==3 || (i/24)==6 || (i/24)==9 || (i/24)==12||         (i/24)==15)){<br> loc = new PVector(sin(PI/180</em>(i+frameCount<em>2))<em>100+100</em>sin(PI<em>frameCount/180)</em>cos(PI*frameCount/90+12), cos(PI/180</em>(i+frameCount<em>2))</em>100+100<em>sin(PI</em>frameCount/90)<em>sin(PI</em>frameCount/180+12));</p>
-<p>  }<br>    else{<br>    loc = new PVector(sin(PI/180<em>(i+frameCount<em>2))</em>100, cos(PI/180</em>(i+frameCount<em>2))</em>100);<br>    }<br> p.move(new PVector(loc.x+sin(5<em>frameCount), loc.y+cos(5</em>frameCount)));<br> //   p2.move(new PVector(loc.x-sin(radians(i))<em>50, loc.y-cos(radians(i))</em>50));<br>      //100<em>cos(radians(2</em>frameCount+i))<em>sin(radians(2</em>frameCount+i)),+100<em>cos(radians(2</em>frameCount+i))<em>cos(radians(2</em>frameCount+i))<br>      //(t/180)%2==1<br>  }<br>}</p>
-<p>这个是线的处理，里面的重要的函数的意思，和数学的意思我会在接下来讲。<br>不同的点的颜色的处理，以及每个水滴的颜色包括每个颜色的内部都不太一样是因为这一句。<br>stroke(map(i, points.size()-1, 0, k<em>20%255+80, 0), 255-k, k</em>17%255);<br>里面的k是我在之前设定的一个变量，每个水滴的k都不一样。map就是把一段数字映射到另一段数字上。上面的rgb值都是我瞎试的，发现这个方式做出来确实是挺随机的，关键还不是random那种乱七八糟的随机，是有规律的，那相连的点的颜色就会是渐变的。<br>strokeWeight(map(i, 0, points.size(), 0, 10));<br>这句话当然就是改变每个点的大小了，头大尾小的水滴就是这样了，i是我之前定义的每个初始点的度数，基本就是代表是哪个点了。</p>
-<p>下面是蝌蚪的实现<br>p.move(new PVector(loc.x+sin(5<em>frameCount), loc.y+cos(5</em>frameCount)));<br>简单的说就是在算出点的坐标后给个圆，就神奇的发现他在绕着圈抖。</p>
-<p>最难的部分就是数学这里了。就是这一段的得来<br>if((t/180)%2==1 &amp;&amp; ((i/24)==0 || (i/24)==3 || (i/24)==6 || (i/24)==9 || (i/24)==12|| (i/24)==15)){</p>
-<p> loc = new PVector(sin(PI/180<em>(i+frameCount<em>2))</em>100+100<em>sin(PI</em>frameCount/180)<em>cos(PI</em>frameCount/90+12), cos(PI/180</em>(i+frameCount<em>2))</em>100+100<em>sin(PI</em>frameCount/90)<em>sin(PI</em>frameCount/180+12));</p>
-<p>  }<br>    else{<br>    loc = new PVector(sin(PI/180<em>(i+frameCount<em>2))</em>100, cos(PI/180</em>(i+frameCount<em>2))</em>100);<br>    }<br>每个数字都是经过计算的，否则运动过程中一定有地方不对<br>开头的if是每180帧可以绕圈转，然后180帧有五个蝌蚪开始转，然后绕一圈后愉快的回归大家庭中，我是有15个点，所以每个点都隔24°。我一直想计算出个表达式让他的点可以一个一个运动出来，但是每次的结果都不对，但是实际上每次的结果还都挺漂亮的。</p>
-<p>我之前还想过，只让点简谐运动，不让他旋转，让画布旋转，后来我放弃了这个想法，因为画布旋转的话可以实现这个效果，但是这就让蝌蚪沿着圆走的时候没有了拖尾，因为蝌蚪实际上没动，是画布旋转的。  </p>
+<p>（“autoplay”：准备好后立即播放；“loop”：循环播放；“display: none”：不在网页上显示）<br>通过document.getElementById(“xxx”)函数获得资源，再通过play()函数播放，通过pause()函数暂停播放。<br>   4.视频显示：将视频作为平面的纹理。<br>var planeGeometry = new THREE.PlaneGeometry(x,x);<br>var material = new THREE.MeshPhongMaterial();<br>material1.side = THREE.DoubleSide;<br>var mesh = new THREE.Mesh(planeGeometry, material);<br>var video = document.getElementById(‘video’);<br>videos.push(video);<br>var texture = new THREE.VideoTexture(video);<br>texture1.minFilter = THREE.LinearFilter;<br>texture1.magFilter = THREE.LinearFilter;<br>texture1.format = THREE.RGBFormat;<br>material1.map = texture;<br>   5.窗口自适应：添加窗口的事件监听器，使场景属性随窗口大小改变而自适应。（resize：窗口改变大小。）<br>window.addEventListener(‘resize’, function ()<br>{<br>    var width = window.innerWidth;<br>    var height = window.innerHeight;<br>    renderer.setSize(width, height);<br>    camera.aspect = width / height;<br>    camera.updateProjectionMatrix();<br>})<br>   6.键盘控制：添加键盘事件。<br>document.onkeydown = function (event)<br>{<br>    var e = event || window.event || arguments.callee.caller.arguments[0];<br>    if (e &amp;&amp; e.keyCode == x)<br>  {<br>//要做的事<br>    }<br>}<br>   7.滑轮控制：添加滑轮事件<br>function setMousewheelEvent()<br>{<br>    var scrollFunc = function (e)<br>    {<br>        e = e || window.event;<br>        if (e.wheelDelta)//判断滑轮事件<br>        {<br>            //要做的事<br>        }<br>    };<br>    //给页面绑定滑轮滚动事件<br>    if (document.addEventListener)<br>    {<br>        document.addEventListener(‘DOMMouseScroll’, scrollFunc, false);<br>    }<br>    //滚动滑轮触发scrollFunc方法<br>    window.onmousewheel = document.onmousewheel = scrollFunc;<br>}<br>   8.单击/双击左键控制：添加左键单击/双击事件。（dblclick：双击；click：单击）<br>window.addEventListener(‘dblclick’, function (e)<br>{<br>    if (e.button == 0)//0：指按下的是左键<br>    {<br>         //要做的事<br>}<br>});<br>   9.单击电视切换视频：<br>先利用射线（raycaster）对象，获取与射线相交的对象。<br>// 获取与射线相交的对象数组<br>function getIntersects(event)<br>{<br>    event.preventDefault();<br>    // 声明 raycaster 和 mouse 变量<br>    var raycaster = new THREE.Raycaster();<br>    var mouse = new THREE.Vector2();<br>    // 通过鼠标点击位置,计算出 raycaster 所需点的位置,以屏幕为中心点,范围 -1 到 1<br>    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;<br>    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;<br>    //通过鼠标点击的位置(二维坐标)和当前相机的矩阵计算出射线位置<br>    raycaster.setFromCamera(mouse, camera);<br>    // 获取与射线相交的对象数组，其中的元素按照距离排序，越近的越靠前<br>    var intersects = raycaster.intersectObjects(scene.children);<br>    //返回选中的对象<br>    return intersects;<br>}<br>再选取最近的对象，若最近的对象为视频对象，则切换视频。<br>   10.雾：添加雾（Fog）对象。</p>
+<p>4、分析总结<br>    之前没有接触过WebGL，所以都是现学的。主要利用了对WebGL进行封装和简化的three.js。<br>模型有部分用了网上的，大部分是自己做和修改的，动画全是自己做的。因为组里有一个擅长建模且做过OpenGL的虚拟漫游的，所以建模这块较大部分人快。<br>主要遇到的问题有：<br>（一）模型方面：<br>1.psd格式图片不能用。最开始纹理用的psd格式导入后不能识别，最后转成了jpg格式。<br>2.封口封不住。最开始的时候房子从外面看是正常的，进去里面后会有面消失。后来发现因为一开始的面只有一个面片，只有一个面片的话可能会消失，要做成一个几何体才行。<br>3.材质有时会出错。模型导入后材质有时不会显示，变成黑色。<br>4.c4d里的可编辑对象很多不对。物体转为可编辑对象时，可能会不显示，造成房子的墙消失还难以重建的问题。<br>5.面片透明的问题难以解决，带有透明通道的图片无法进入。<br>6.空间位置需要对照。因为有的是模型，有一部分是自己打出来的，所以模型和代码打出来的东西位置要对应，通过正方体寻找空间对应的关系，毕竟c4d很多时候都和各种软件方向相反而且大小不一致。<br>7.面数过多显示会卡顿，所以最后对模型优化，对大多数模型减面处理，比如桌子、椅子、茶杯和花草。<br>8.有的骨骼动画会变得很奇怪，导入出错。<br>9.物体离摄像机过近会看不到物体。<br>10.可能是由于遮挡关系的原因，有的面应该要显示出来的显示不出来，换个位置可能会显示，房子外面可以显示的，在房子里面不一定会有。<br>（二）交互方面：<br>1.模型有的浏览器无法加载。一开始尝试了多个浏览器，然后发现要导入模型只能使用Microsoft Edge浏览器。后来经一位同学指点，知道了其他浏览器无法加载是因为设置了禁止加载本地插件。比如Google浏览器，在其属性的目标项目后面加上“ –enable-webgl –ignore-gpu-blacklist –allow-file-access-from-files”就可以加载模型了。但是其他浏览器还不知道要怎么更改来使其能加载模型。<br><img src="https://img-blog.csdnimg.cn/20191120162816119.png" alt="在这里插入图片描述"></p>
+<p>2.一开始没有特别定义Button的位置等，加了Button之后，漫游界面由占满整个网页变成了四周有一些白条，很难看。<br><img src="https://img-blog.csdnimg.cn/2019112016283616.png" alt="在这里插入图片描述"></p>
+<p>后来参考了老师之前展示的车子漫游的代码，修改了页面body和button的属性。</p>
+<p>3.天空盒一开始打算在scene上直接贴纹理。<br>scene.background = new THREE.CubeTextureLoader()<br>    .setPath(‘xxx/‘).load(<br>        [<br>            ‘xxx.jpg’,<br>            ‘xxx.jpg’,<br>            ‘xxx.jpg’,<br>            ‘xxx.jpg’,<br>            ‘xxx.jpg’,<br>            ‘xxx.jpg’<br>        ]<br>    );<br>但是不知为什么，无法识别函数setPath()，所以采用了做一个很大的盒子，充当天空盒的方案。<br>4.视频最开始用了另一个方法，在之前尝试时是可以用的，但是当和模型放在一起时，一旦视频和模型一起存在，东西就会什么都看不见，当照相机z坐标在视频后面后，才能看到东西。想不出为什么，就换了个方案加载视频。<br>5.因为坐标的单位值确定，但电视机是模型导入而非使用坐标计算，所以视频（放在一个平面上）加载后无法完全盖住电视上的灰色部分。</p>
+<p>后来直接在打开视频时在视频后面加了个黑色的底。<br><img src="https://img-blog.csdnimg.cn/20191120162855235.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> <img src="https://img-blog.csdnimg.cn/20191120162911801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code>6.跳跃其实不是真的跳跃，是匀速的往上再往下回到原地。</code></pre><p>7.通过鼠标进行漫游原本找到了一个js库（OrbitControls.js），但是因为这个库的鼠标漫游效果不符合我们的要求，就没有使用。<br>8.在没有视频播放的时候，有一个灰色的长方体和视频在同一个位置，使在无视频播放时也有对象可以点击，进而播放视频。<br>虽然花了很多时间，但是当看到最终效果时，还是好有成就感的！</p>
 
       
 
@@ -274,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/19/processing%20%E5%86%99%E7%9A%84%E8%A7%84%E5%BE%8B%E5%9B%BE%E5%BD%A2%E8%BF%90%E5%8A%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/20/web%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF%E8%99%9A%E6%8B%9F%E6%BC%AB%E6%B8%B8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/20/web%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF%E8%99%9A%E6%8B%9F%E6%BC%AB%E6%B8%B8/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          web实现三维场景虚拟漫游
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/11/19/processing%20%E5%86%99%E7%9A%84%E8%A7%84%E5%BE%8B%E5%9B%BE%E5%BD%A2%E8%BF%90%E5%8A%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">processing 写的规律图形运动</div>
       <i class="icon-circle-right"></i>
     </a>
   
