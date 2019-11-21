@@ -6,17 +6,38 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>c4d多边形建模（一） | Hexo</title>
+  <title>用科大讯飞的语音库实现语音唤醒转写与生成 (1) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="c4d多边形建模c4d还是最适合多边形，复杂的精细的东西还是交给zb完成吧">
+  <meta name="description" content="mfc调用科大讯飞实现语音生成转写唤醒要实现语音合成唤醒转写啥的，微软和谷歌也行，只是我和朋友两人选择了使用科大讯飞，体验还可以。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c4d多边形建模（一）">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;c4d%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1%EF%BC%88%E4%B8%80%EF%BC%89&#x2F;index.html">
+<meta property="og:title" content="用科大讯飞的语音库实现语音唤醒转写与生成 (1)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;21&#x2F;%E7%94%A8%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E7%9A%84%E8%AF%AD%E9%9F%B3%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92%E8%BD%AC%E5%86%99%E4%B8%8E%E7%94%9F%E6%88%90%20(1)&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="c4d多边形建模c4d还是最适合多边形，复杂的精细的东西还是交给zb完成吧">
+<meta property="og:description" content="mfc调用科大讯飞实现语音生成转写唤醒要实现语音合成唤醒转写啥的，微软和谷歌也行，只是我和朋友两人选择了使用科大讯飞，体验还可以。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-21T00:56:39.875Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112109302294.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112109303296.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112109303812.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093055458.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112109310717.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093120116.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093133408.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093145835.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093234473.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112109325438.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093343766.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093400411.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112109341697.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093458747.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093630809.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121093917163.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121094136771.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121094158767.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121094203965.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191121094250167.png">
+<meta property="og:updated_time" content="2019-11-21T01:54:56.372Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112109302294.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,36 +173,238 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-c4d多边形建模（一）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-用科大讯飞的语音库实现语音唤醒转写与生成 (1)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      c4d多边形建模（一）
+      用科大讯飞的语音库实现语音唤醒转写与生成 (1)
     </h1>
   
 
         
-        <a href="/2019/11/21/c4d%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-11-21T00:56:02.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
+        <a href="/2019/11/21/%E7%94%A8%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E7%9A%84%E8%AF%AD%E9%9F%B3%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92%E8%BD%AC%E5%86%99%E4%B8%8E%E7%94%9F%E6%88%90%20(1)/" class="archive-article-date">
+  	<time datetime="2019-11-21T01:54:14.553Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="c4d多边形建模"><a href="#c4d多边形建模" class="headerlink" title="c4d多边形建模"></a>c4d多边形建模</h2><p>c4d还是最适合多边形，复杂的精细的东西还是交给zb完成吧  <a id="more"></a></p>
-<p><strong>倒角</strong><br>用在循环面，加面   创建想要的循环路径，有的地方想要循环的面，比如眼睛和一些圆的物体</p>
-<p><strong>挤压</strong><br>保护边缘用的，同时创建循环边，有向内和向外的，多了边之后就可以保护原来的边缘</p>
-<p><strong>旋转边</strong><br>和稀泥，因为这个东西不改变边的数量<br>极点转移，把极点转移的一个很重要的方法，转到不重要的地方（平面）</p>
-<p><strong>缝合</strong><br>改变循环选择方向，ctrl按住拉过去，会少边的</p>
-<p><strong>删除</strong>会什么都没有，<strong>消除</strong>会想办法保留一个面，<strong>消融</strong>是真的两个三角形在一个平面上硬少了一个面，具体的区别等到在边缘的时候试试就明白了</p>
-<p><strong>平滑着色</strong><br>soft的话可以欺骗软件，hard就是两个边硬起来，倒角的时候选择是否平滑着色<br>想把一些面着色搞平滑的话就hard然后平均点，倒角出的边可以扫描选择-&gt;未选择，平滑着色角度是控制转角平滑，这个是利用插件完成的，控制法线的。</p>
-<p><strong>小注意点</strong><br>低面体大平面让平滑的时候，向内挤压再倒角，保护平面，还有不错的平滑边<br>法线的移动是选中面后各自以自己的法线变化的，选择可编辑对象，选法线也是一样</p>
-<p>c4d无法做法线贴图，法线贴图欺骗软件，仿佛有光效和凹凸，放平看就穿帮了</p>
-<p>视图的显示里可以给法线反的看不见，渲染也一样</p>
+        <h2 id="mfc调用科大讯飞实现语音生成转写唤醒"><a href="#mfc调用科大讯飞实现语音生成转写唤醒" class="headerlink" title="mfc调用科大讯飞实现语音生成转写唤醒"></a>mfc调用科大讯飞实现语音生成转写唤醒</h2><p>要实现语音合成唤醒转写啥的，微软和谷歌也行，只是我和朋友两人选择了使用科大讯飞，体验还可以。  <a id="more"></a></p>
+<p>3.1运行主画面<br>1、系统一打开，出现酣睡的龙猫。<br> <img src="https://img-blog.csdnimg.cn/2019112109302294.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2、语音唤醒：说出“小洛起床”或”小洛醒醒”（唤醒词），可唤醒程序，进入主界面。<br> <img src="https://img-blog.csdnimg.cn/2019112109303296.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3、快捷键ctrl+E也可进入主界面。<br>4、语音识别：<br>（1）点击“麦克风录入”单选键，会进入“麦克风录入”模式（进入主界面时默认为“麦克风录入”模式）。<br> <img src="https://img-blog.csdnimg.cn/2019112109303812.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击“音频导入”单选键，会进入“音频导入”模式。<br> <img src="https://img-blog.csdnimg.cn/20191121093055458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（2）麦克风录入：<br> <img src="https://img-blog.csdnimg.cn/2019112109310717.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>1.开始录音：点击“开始录音”按钮，开始录音，同时“开始录音”按钮变为“停止录音”按钮。<br> <img src="https://img-blog.csdnimg.cn/20191121093120116.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2.停止录音：a.开始说话后，说话声停止一段时间后，自动停止录音，同时文本框里出现识别结果。若文本框内之前已有内容，识别结果会加在之前的内容后。此时需要点击一次“停止录音”按钮，才能切换回“开始录音”按钮。<br> <img src="https://img-blog.csdnimg.cn/20191121093133408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>b.开始说话后，点击“停止录音”按钮，按钮切换回“开始录音”按钮，同时停止录音，文本框里出现识别结果。若文本框内之前已有内容，识别结果会加在之前的内容后。<br> <img src="https://img-blog.csdnimg.cn/20191121093145835.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（3）音频导入：<br> <img src="https://img-blog.csdnimg.cn/20191121093234473.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>点击“选择音频”按钮，会弹出选择文件的对话框。<br> <img src="https://img-blog.csdnimg.cn/2019112109325438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以选择wav和pcm格式的文件。<br><img src="https://img-blog.csdnimg.cn/20191121093343766.png" alt="在这里插入图片描述"><br>选择文件后，点击“打开”按钮，文本框里出现识别结果。若文本框内之前已有内容，会先清空文本框，显示识别结果。<br> <img src="https://img-blog.csdnimg.cn/20191121093400411.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（4）保存：点击“保存”按钮，可以将当前文本框内的识别结果保存为txt格式。若保存成功，会弹出“保存成功”消息框。<br> <img src="https://img-blog.csdnimg.cn/2019112109341697.png" alt="在这里插入图片描述"><br>（5）选择语言：语言下拉框可以选择语言，共可以选择中文、英文、日文三种语言。为什么有这个呢，因为我其实还会日语，所以我就要出来骚一下<br> <img src="https://img-blog.csdnimg.cn/20191121093458747.png" alt="在这里插入图片描述"><br>5.语音合成：<br>（1）输入文本：<br>1.直接在文本框内输入文本。<br>2.点击“打开文本”按钮，会弹出选择文件的对话框，可以选择txt格式的文件打开。<br>（2）播放：<br>1.点击“播放”按钮，播放文本转换成的音频，同时“播放”按钮变为无法使用，“暂停”“停止”“保存”按钮变为可以使用，右下角小喇叭开始播放声音的动态效果。<br>2.点击“暂停”按钮，暂停播放文本转换成的音频，同时“暂停”按钮变为无法使用，“继续”按钮变为可以使用，右下角小喇叭停止播放声音的动态效果。<br>3.点击“继续”按钮，继续播放文本转换成的音频，同时“继续”按钮变为无法使用，“暂停”按钮变为可以使用，右下角小喇叭开始播放声音的动态效果。<br>4.点击“停止”按钮，停止播放文本转换成的音频，同时“暂停”“继续”“停止”“保存”按钮变为无法使用，“播放”按钮变为可以使用，右下角小喇叭停止播放声音的动态效果。<br>5.若未点击“停止”按钮，音频播放完毕后，“暂停”“继续”按钮自动变为无法使用，右下角小喇叭停止播放声音的动态效果。之后需要点击一次“停止”按钮才能令“播放”按钮可以使用。<br>（3）保存：在“保存”按钮可以用的状态下，点击“保存”按钮，可以将当前文本框内的识别结果保存为wav或pcm或mp3格式。若保存成功，会弹出“保存成功”消息框。<br>（4）修改音频属性：<br>1.性别下拉框可以选择性别。<br>2.语速滑动条可以改变语速，语速范围为1<del>100。<br>3.音量滑动条可以改变音量，音量范围为1</del>100。<br>（注：语音唤醒、语音识别功能必须在在线的情况下才能使用，语音合成功能在线、离线都可以使用。）<br>3.2设计结构<br> <img src="https://img-blog.csdnimg.cn/20191121093630809.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3.3主要代码<br>1、环境配置：<br>1.将SDK中bin,include,libs文件夹复制到新建工程文件夹下。<br>2.添加附加包含目录：将复制过来的include文件夹添加到附加包含目录。<br>3.加载msc.lib文件：在文件中添加下述代码。</p>
+<ol>
+<li>#ifdef _WIN64  </li>
+<li>#pragma comment(lib,”../libs/msc_x64.lib”)//x64  </li>
+<li>#else  </li>
+<li>#pragma comment(lib,”../libs/msc.lib”)//x86  </li>
+<li>#endif  </li>
+<li>将msc.dll所在目录设置为工作目录。<br>注：换了电脑之后要修改的配置：修改附加包含目录include的路径，改成在新电脑上的路径。<br>主要的函数都在科大讯飞的文档里，写的很明白，这里就不复制粘贴了，没啥意思。</li>
+</ol>
+<p>4、图形化界面：<br>1.线程：<br>（1）定义线程：</p>
+<ol>
+<li>DWORD WINAPI xiancheng2(LPVOID lpParameter)  </li>
+<li>{  </li>
+<li>…  </li>
+<li>return 0;  </li>
+<li>}<br>（2）创建线程：</li>
+<li>HANDLE hThread = CreateThread(NULL,0,xiancheng,NULL,0,NULL);<br>（3）调用对话框数据：<br>创建线程时将对话框作为参数传入线程：（this指对话框）</li>
+<li>HANDLE hThread = CreateThread(NULL,0,xiancheng,this,0,NULL);<br>线程中创建主对话框类的指针，并指向传入的主对话框参数：</li>
+<li>DWORD WINAPI xianchengTTS(LPVOID lpParameter)  </li>
+<li>{  </li>
+<li>C人机交互mfcDlg <em>pThis = (C人机交互mfcDlg</em>)lpParameter;  </li>
+<li>…  </li>
+<li>return 0;  </li>
+<li>}<br>之后在线程中便可使用该指针调用主对话框的参数了：</li>
+<li>pThis-&gt;x  </li>
+</ol>
+<p>2.CString转const char*：</p>
+<ol>
+<li>CString str=_T(“CSDN”);  </li>
+<li>const char* cstr;  </li>
+<li>char temp[100];  </li>
+<li>::wsprintfA(temp, “%ls”,(LPCTSTR)str);  </li>
+<li>cstr = temp;  </li>
+</ol>
+<p>3.Slider Control控件：<br> <img src="https://img-blog.csdnimg.cn/20191121093917163.png" alt="在这里插入图片描述"><br>1）初始化</p>
+<ol>
+<li>m_slidercA.SetRange(0,100);//设置范围  </li>
+<li>m_slidercA.SetPos(50);//当前停留的位置<br>（2）添加滑动消息：打开Slider Control控件的类向导，给对话框类添加WM_HSCROLL消息：</li>
+<li>void CxxxView::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar* pScrollBar)  </li>
+<li>{  </li>
+<li>if ((&amp;m_slider) ==(CSliderCtrl *) pScrollBar)  </li>
+<li>{  </li>
+<li>//要实现的功能  </li>
+<li>}  </li>
+<li>CFormView::OnHScroll(nSBCode, nPos, pScrollBar);  </li>
+<li>} </li>
+</ol>
+<p>4.快捷键：<br>先添加Accelerator资源，修改键值，在对应键上添加事件处理程序。<br> <img src="https://img-blog.csdnimg.cn/20191121094136771.png" alt="在这里插入图片描述"><br>然后在对话框头文件中添加快捷键对象“HACCEL m_hAccel”,在对话框构造函数中加载：（IDR_ACCELERATOR1是快捷键表的ID）</p>
+<ol>
+<li>m_hAccel=::LoadAccelerators(AfxGetInstanceHandle(),MAKEINTRESOURCE(IDR_ACCELERATOR1));<br>最后重载“virtual BOOL PreTranslateMessage(MSG* pMsg)”函数，在重载函数中添加：</li>
+<li>if(m_hAccel)  </li>
+<li>if(::TranslateAccelerator(m_hWnd,m_hAccel,pMsg))    </li>
+<li>return(TRUE);<br>激活快捷键。</li>
+</ol>
+<p>5.插入gif:<br>（1）下载PictureEx.h和PictureEx.cpp。<br>（2）拷贝PictureEx.h和PictureEx.cpp到工程目录。<br> <img src="https://img-blog.csdnimg.cn/20191121094158767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>（3）将PictureEx.h和PictureEx.cpp导入到工程。<br> <img src="https://img-blog.csdnimg.cn/20191121094203965.png" alt="在这里插入图片描述"><br>（4）在XXXDlg.h中，引入PictureEx.h。</p>
+<ol>
+<li>#include “PictureEx.h”<br>（5）在对话框中拖入一个picture control控件。<br>（6）给picture control控件添加控件变量:m_pic 。<br>（7）在XXXDlg.h中，找到刚添加的控件变量定义行，改为：</li>
+<li>CPictureEx m_pic;<br>（8）显示gif：</li>
+<li>m_pic.Load(_T(“D:\1.gif”));<br>（9）<br>a.让gif动起来：</li>
+<li>m_pic.Draw();<br>b.让gif停下来：</li>
+<li>m_pic.Stop();  </li>
+</ol>
+<p>6.媒体设备控制接口mciSendCommand：<br>（1）打开设备：</p>
+<ol>
+<li>MCI_OPEN_PARMS mciOpenParms;  </li>
+<li>mciOpenParms.lpstrDeviceType=(LPCWSTR)(MCI_DEVTYPE_WAVEFORM_AUDIO);  </li>
+<li>mciOpenParms.lpstrElementName=(LPCWSTR)Filename;//Filename为文件地址  </li>
+<li>mciSendCommand(NULL,MCI_OPEN,MCI_OPEN_TYPE|MCI_OPEN_TYPE_ID|MCI_WAIT|MCI_OPEN_ELEMENT,(DWORD)(LPVOID)&amp;mciOpenParms);  </li>
+</ol>
+<p>（2）播放：MCI_PLAY</p>
+<ol>
+<li>DWORD m_nDeviceID;  </li>
+<li>m_nDeviceID=mciOpenParms.wDeviceID;  </li>
+<li>MCI_PLAY_PARMS mciPlayParms;  </li>
+<li>mciPlayParms.dwFrom=0;  </li>
+<li>mciSendCommand(m_nDeviceID,MCI_PLAY,MCI_FROM ,(DWORD)(LPVOID)&amp;mciPlayParms);  </li>
+</ol>
+<p>（3）暂停播放：MCI_PAUSE</p>
+<ol>
+<li>mciSendCommand(m_nDeviceID, MCI_PAUSE, 0,(DWORD)(LPVOID) &amp;mciPlayParms);  </li>
+</ol>
+<p>（4）继续播放：由于暂停时播放的指针并没有移回开头，所以直接重新播放就好。</p>
+<ol>
+<li>mciSendCommand(m_nDeviceID, MCI_PLAY, 0,(DWORD)(LPVOID)&amp;mciPlayParms);  </li>
+</ol>
+<p>（5）停止播放，关闭设备： MCI_CLOSE</p>
+<ol>
+<li>mciSendCommand(m_nDeviceID, MCI_CLOSE, NULL, NULL);  </li>
+</ol>
+<p>（6）获取媒体总时长和当前播放位置：MCI_STATUS_LENGTH 获得文件长度，MCI_STATUS_POSITION 获得文件播放的当前位置。返回信息存放于StatusParms.dwReturn中。</p>
+<ol>
+<li>MCI_STATUS_PARMS StatusParms;  </li>
+<li>StatusParms.dwItem = MCI_STATUS_LENGTH;  </li>
+<li>mciSendCommand (m_nDeviceID, MCI_STATUS, MCI_WAIT | MCI_STATUS_ITEM,(DWORD)(LPVOID) &amp;StatusParms);  </li>
+<li>wavLength=StatusParms.dwReturn;  </li>
+<li>StatusParms.dwItem = MCI_STATUS_POSITION;  </li>
+<li>mciSendCommand (m_nDeviceID, MCI_STATUS, MCI_WAIT | MCI_STATUS_ITEM,(DWORD)(LPVOID) &amp;StatusParms);  </li>
+<li>wavPosition=StatusParms.dwReturn;  </li>
+</ol>
+<p>7.麦克风录入，录制为pcm文件：</p>
+<ol>
+<li>HANDLE          wait;    </li>
+<li>waveform.wFormatTag = WAVE_FORMAT_PCM;//声音格式为PCM    </li>
+<li>waveform.nSamplesPerSec = 16000;//采样率，16000次/秒    </li>
+<li>waveform.wBitsPerSample = 16;//采样比特，16bits/次    </li>
+<li>waveform.nChannels = 1;//采样声道数，2声道    </li>
+<li>waveform.nAvgBytesPerSec = 16000;//每秒的数据率，就是每秒能采集多少字节的数据    </li>
+<li>waveform.nBlockAlign = 2;//一个块的大小，采样bit的字节数乘以声道数    </li>
+<li>waveform.cbSize = 0;//一般为0    </li>
+<li></li>
+<li>wait = CreateEvent(NULL, 0, 0, NULL);    </li>
+<li>//使用waveInOpen函数开启音频采集    </li>
+<li>//建立两个数组（这里可以建立多个数组）用来缓冲音频数据    </li>
+<li>DWORD bufsize = 1024*100;//每次开辟10k的缓存存储录音数据    </li>
+<li>int i;    </li>
+<li></li>
+<li>while(isawake==false){  </li>
+<li>i=2;  </li>
+<li>fopen_s(&amp;pf, IVW_AUDIO_FILE_NAME, “wb”);  </li>
+<li>waveInOpen(&amp;hWaveIn, WAVE_MAPPER, &amp;waveform,(DWORD_PTR)wait, 0L, CALLBACK_EVENT);  </li>
+<li>while(i–)//录制2秒左右声音，结合音频解码和网络传输可以修改为实时录音播放的机制以实现对讲功能    </li>
+<li>{    </li>
+<li>pBuffer1 = new BYTE[bufsize];    </li>
+<li>wHdr1.lpData = (LPSTR)pBuffer1;    </li>
+<li>wHdr1.dwBufferLength = bufsize;    </li>
+<li>wHdr1.dwBytesRecorded = 0;    </li>
+<li>wHdr1.dwUser = 0;    </li>
+<li>wHdr1.dwFlags = 0;    </li>
+<li>wHdr1.dwLoops = 1;    </li>
+<li>waveInPrepareHeader(hWaveIn, &amp;wHdr1, sizeof(WAVEHDR));//准备一个波形数据块头用于录音    </li>
+<li>waveInAddBuffer(hWaveIn, &amp;wHdr1, sizeof (WAVEHDR));//指定波形数据块为录音输入缓存    </li>
+<li>waveInStart(hWaveIn);//开始录音    </li>
+<li>Sleep(1000);//等待声音录制1s    </li>
+<li>waveInReset(hWaveIn);//停止录音    </li>
+<li>fwrite(pBuffer1, 1, wHdr1.dwBytesRecorded, pf);    </li>
+<li>delete pBuffer1;  </li>
+<li>}    </li>
+<li>fclose(pf);    </li>
+<li>waveInClose(hWaveIn);  </li>
+<li>}  </li>
+</ol>
+<p>8.通过麦克风采集音频数据（不产生音频文件）：sr_write_audio_data()函数。函数源代码见下方：</p>
+<ol>
+<li>int sr_write_audio_data(struct speech_rec *sr, char *data, unsigned int len)  </li>
+<li>{  </li>
+<li>const char *rslt = NULL;  </li>
+<li>int ret = 0;  </li>
+<li>if (!sr )  </li>
+<li>return -E_SR_INVAL;  </li>
+<li>if (!data || !len)  </li>
+<li>return 0;  </li>
+<li></li>
+<li>ret = QISRAudioWrite(sr-&gt;session_id, data, len, sr-&gt;audio_status, &amp;sr-&gt;ep_stat, &amp;sr-&gt;rec_stat);  </li>
+<li>if (ret) {  </li>
+<li>end_sr_on_error(sr, ret);  </li>
+<li>return ret;  </li>
+<li>}  </li>
+<li>sr-&gt;audio_status = MSP_AUDIO_SAMPLE_CONTINUE;  </li>
+<li></li>
+<li>if (MSP_REC_STATUS_SUCCESS == sr-&gt;rec_stat) { //已经有部分听写结果  </li>
+<li>rslt = QISRGetResult(sr-&gt;session_id, &amp;sr-&gt;rec_stat, 0, &amp;ret);  </li>
+<li>if (MSP_SUCCESS != ret) {  </li>
+<li>sr_dbg(“\nQISRGetResult failed! error code: %d\n”, ret);  </li>
+<li>end_sr_on_error(sr, ret);  </li>
+<li>return ret;  </li>
+<li>}  </li>
+<li>if (NULL != rslt &amp;&amp; sr-&gt;notif.on_result)  </li>
+<li>sr-&gt;notif.on_result(rslt, sr-&gt;rec_stat == MSP_REC_STATUS_COMPLETE ? 1 : 0);  </li>
+<li>}  </li>
+<li></li>
+<li>if (MSP_EP_AFTER_SPEECH == sr-&gt;ep_stat)  </li>
+<li>end_sr_on_vad(sr);  </li>
+<li></li>
+<li>return 0;  </li>
+<li>} </li>
+</ol>
+<p>四、分析总结<br>（一）缺陷<br>1.语音唤醒：要先将录到的音频转为pcm文件，再对文件进行识别。音频文件是循环采集的，大概每3秒录一次，要是刚好卡在切换循环的时候说就无法识别到。<br>2.语音唤醒和语音识别必须连网。<br>3.语音合成只能合成中英文。（日文其实也是可以念的，就是只能一个一个假名念。）<br>4.语音识别的麦克风录入，就算是说话停止后自动录入停止，显示识别结果，也一定要点“停止录音”按钮才能进行其它操作。因为“停止录音”按钮里有退出科大讯飞的登录，如果不退出，接下来进行别的操作时会重新登录，从而产生登录冲突。<br>5.语音合成，点击了“停止”按钮之后就无法点“保存”按钮。因为保存是利用mciSendCommand的函数，保存之前mciSendCommand打开的设备的数据，然而“停止”按钮里有关闭mciSendCommand打开的设备，所以点击了“停止”按钮之后要保存的对象也会关闭，因此干脆设为了点击了“停止”按钮之后就无法点“保存”按钮。<br>6.实时语音识别的用户词表由于版本问题不能上传，就没做命令词识别。<br>7.语音合成不是合成数据后直接播放，而是合成数据后先写入一个wav文件，再播放这个wav文件。</p>
+<p>（二）主要问题<br>1.输入的音频格式要统一，有的时候要用到wav有的时候要用到pcm。不知道应该要什么格式，就利用au转格式，尝试了很多次。在唤醒的时候对pcm的要求非常严格（各种属性限死了），否则就是什么也识别不出来。<br>2.唤醒的时候因为使用的是录成pcm再识别的方式，所以需要重复唤醒，就出现了错误为10132的错误，查了科大讯飞的东西，指的是上一次会话还没有结束，因为每次的识别也需要时间，下一次识别的时候没关闭，就无法再次登陆。因此每次录完之后还会sleep一段时间。<br>3.录入pcm的时候出现过第二次录入就录不进去的情况，那是因为录入pcm的函数waveInOpen(&amp;hWaveIn, WAVE_MAPPER, &amp;waveform,(DWORD_PTR)wait, 0L, CALLBACK_EVENT)函数没有每次循环都调用。<br>4.麦克风录入的语音识别，每隔一段时间翻译一次，比打开音频文件翻译要准确，但是说话时不能离话筒太近，气声会影响翻译效果，声音的大小也有规定。<br>5.  .c和.cpp之间有些巧妙的区别，官方的代码是.c文件，有些地方要改成.cpp才能运行。<br>6.VS项目中，若同时有.c和.cpp文件，编译器会对它们采用不同的编译方式（主要因为函数声明的处理方式不同，C语言没有多态，函数名编译后比较正常，而C++有多态的特性，所以编译之后函数名面目全非）。需要把.c文件的预编译头去掉。<br>7.在mfc里，因为要重复地读取录的数据，所以很多地方要用到循环，必须要新开一个线程，否则就会卡死。<br>8.在进行实时识别的时候，出现报错10111的情况，就是sr_start_listening函数调用失败，去官网查询后是：未调用MSPLogin接口。可是在最开始点击按钮的时候就已经调用了，并经过调试发现调用成功了。所以在无数次的尝试之后发现，这玩意，经过了一个线程就没用了，于是就在后面sr_start_listening调用之前又登陆了一次，最终尝试成功。<br>9.播放wav文件，原本用的是PlaySound()函数。利用“PlaySound(TEXT(“Data\1.wav”), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);”播放音频，利用“PlaySound(NULL,NULL,NULL);”停止播放。但是PlaySound()停止之后就无法从停止的地方开始继续播放，于是之后改为了用mciSendCommand。<br>10.语音合成的参数第一次用“CString str=L”engine_type = local, voice_name = “+sexType+L”, text_encoding = GB2312, tts_res_path = fo|res\tts\=”+sexType+L”.jet;fo|res\tts\common.jet, sample_rate = 16000, speed = “+speedStr+L”, volume = “+volumeStr+L”, pitch = 50, rdn = 0”;”一直出错，查看官方文件后，错误原因为指定文件打不开。后来重写了一次，“CString str=L”engine_type = local, voice_name = “+sexType+L”, text_encoding = GB2312, tts_res_path = fo|res\tts\“+sexType+L”.jet;fo|res\tts\common.jet, sample_rate = 16000, speed = “+speedStr+L”, volume = “+volumeStr+L”, pitch = 50, rdn = 0”;”，就可以了。但是实在是不知道有什么区别，可能是空格中英文的问题。<br>11.语音识别的麦克风录入，若为声音停下，自动停止录音的情况，会调用show_result(char *string, char is_over)两次，一次is_over=0，一次is_over=1；若为点击“停止录音”按钮的情况，会调用show_result(char *string, char is_over)一次，is_over=1。所以为了防止由于”show_result(char *string, char is_over)”调用两次导致文本框内识别文本出现两次的情况，令当is_over=1时更新文本。<br>12.播放wav时，为了判断何时播放结束，开了一个线程：</p>
+<ol>
+<li>DWORD WINAPI xianchengTTS(LPVOID lpParameter)  </li>
+<li>{  </li>
+<li>C人机交互mfcDlg <em>pThis = (C人机交互mfcDlg</em>)lpParameter;  </li>
+<li>while(true)  </li>
+<li>{  </li>
+<li>(pThis-&gt;StatusParms).dwItem=MCI_STATUS_POSITION;  </li>
+<li>mciSendCommand (pThis-&gt;m_nDeviceID, MCI_STATUS, MCI_WAIT | MCI_STATUS_ITEM,(DWORD)(LPVOID) &amp;(pThis-&gt;StatusParms));  </li>
+<li>if((pThis-&gt;StatusParms).dwReturn==pThis-&gt;wavLength)  </li>
+<li>break;  </li>
+<li>}  </li>
+<li>…  </li>
+<li>return 0;  </li>
+<li>}<br>断点调试了一下，(pThis-&gt;StatusParms).dwReturn的值一直不变，但是明明每次在线程里都更新了pThis-&gt;StatusParms的值。于是觉得是因为通过“HANDLE hThread = CreateThread(NULL,0,xianchengTTS,this,0,NULL);”创建线程时，传进去的是那一瞬间的主对话框状态，线程里调用的主对话框信息无法实时更新，所以(pThis-&gt;StatusParms).dwReturn变不了。<br>原本是想利用</li>
+<li>StatusParms.dwItem = MCI_STATUS_POSITION;  </li>
+<li>mciSendCommand (m_nDeviceID, MCI_STATUS, MCI_WAIT | MCI_STATUS_ITEM,(DWORD)(LPVOID) &amp;StatusParms);<br>获取当前音频播放到的时间，然后和音频总时间进行对比。于是无法使用这个方法了。之后采用了很骚的方法——手工算时间：</li>
+<li>DWORD WINAPI xianchengTTS(LPVOID lpParameter)  </li>
+<li>{  </li>
+<li>C人机交互mfcDlg <em>pThis = (C人机交互mfcDlg</em>)lpParameter;  </li>
+<li>double i=pThis-&gt;wavPosition;  </li>
+<li>while(pThis-&gt;flagPlay)  </li>
+<li>{  </li>
+<li>if(i&gt;=pThis-&gt;wavLength)  </li>
+<li>break;  </li>
+<li>i+=0.0000032;  </li>
+<li>}  </li>
+<li>…  </li>
+<li>return 0;  </li>
+<li>}<br>但是后来在对话框类里定了一个布尔值，线程里调用对话框的这个布尔值是可以实时更新的，就很奇怪。<br>顺便一提，上面那个获取音频位置的方法，在对话框函数里是正确的。</li>
+</ol>
+<p>（三）感想<br>一开始听到要做语音时，还以为是要让我们自己写语音识别、语音合成的代码，被震惊了。后来知道原来是可以调用已有的sdk的。<br>这次实验主要调用了科大讯飞的sdk，虽然科大讯飞给了demo，但自己实际使用那些函数时也没有那么简单，还是花费了很多时间研究的。不过当看到最终效果时，还是好有成就感的。<br>最后碎碎念一句，科大讯飞的语音合成有一个参数<br> <img src="https://img-blog.csdnimg.cn/20191121094250167.png" alt="在这里插入图片描述"><br>一看就很有中国感，不愧是中国的公司开发的。</p>
+<p>github文件：<a href="https://github.com/vandarkfan/speech-recognition-dictation" target="_blank" rel="noopener">添加链接描述</a></p>
 
       
 
@@ -261,7 +484,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/21/c4d%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/21/%E7%94%A8%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E7%9A%84%E8%AF%AD%E9%9F%B3%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92%E8%BD%AC%E5%86%99%E4%B8%8E%E7%94%9F%E6%88%90%20(1)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +498,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/21/%E7%94%A8%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E7%9A%84%E8%AF%AD%E9%9F%B3%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92%E8%BD%AC%E5%86%99%E4%B8%8E%E7%94%9F%E6%88%90%20(1)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用科大讯飞的语音库实现语音唤醒转写与生成 (1)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/20/adobe%20xd%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">adobe xd的一些操作总结</div>
+    <a href="/2019/11/21/c4d%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c4d多边形建模（一）</div>
       <i class="icon-circle-right"></i>
     </a>
   
