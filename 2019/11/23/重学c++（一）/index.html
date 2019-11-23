@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>重学c++（一） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="赋值运算符函数引发的一系列理解在进入最开始这一章之前我看了一些东西发现，我真的是对c++一无所知，虽然我一直用c++做各种各样的作业，甚至我觉得我用了两年的vs2012都白用了。咱先对我快速获得的知识做个总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重学c++（一）">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E9%87%8D%E5%AD%A6c++%EF%BC%88%E4%B8%80%EF%BC%89&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="赋值运算符函数引发的一系列理解在进入最开始这一章之前我看了一些东西发现，我真的是对c++一无所知，虽然我一直用c++做各种各样的作业，甚至我觉得我用了两年的vs2012都白用了。咱先对我快速获得的知识做个总结。">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191123184235807.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191123184332299.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;2019112318450449.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191123184624951.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191123184722756.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191123184808998.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-11-23T11:03:36.995Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191123184235807.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -141,16 +151,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-重学c++（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-重学c++（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/23/%E9%87%8D%E5%AD%A6c++%EF%BC%88%E4%B8%80%EF%BC%89/">重学c++（一）</a>
+    <h1 class="article-title" itemprop="name">
+      重学c++（一）
     </h1>
   
 
@@ -163,10 +171,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="赋值运算符函数引发的一系列理解"><a href="#赋值运算符函数引发的一系列理解" class="headerlink" title="赋值运算符函数引发的一系列理解"></a>赋值运算符函数引发的一系列理解</h2><p>在进入最开始这一章之前我看了一些东西发现，我真的是对c++一无所知，虽然我一直用c++做各种各样的作业，甚至我觉得我用了两年的vs2012都白用了。咱先对我快速获得的知识做个总结。
-        
+        <h2 id="赋值运算符函数引发的一系列理解"><a href="#赋值运算符函数引发的一系列理解" class="headerlink" title="赋值运算符函数引发的一系列理解"></a>赋值运算符函数引发的一系列理解</h2><p>在进入最开始这一章之前我看了一些东西发现，我真的是对c++一无所知，虽然我一直用c++做各种各样的作业，甚至我觉得我用了两年的vs2012都白用了。咱先对我快速获得的知识做个总结。  <a id="more"></a></p>
+<p>##一，各类库的使用<br>vector,stack,quene,deque,我惊奇的发现我竟然这些常用的东西我在打程序的时候都没怎么使用过，引发了我的深思。下面进行一系列对总结，以后开始使用。<br><a href="https://blog.csdn.net/duan19920101/article/details/50617190" target="_blank" rel="noopener">vector使用</a><br><a href="https://blog.csdn.net/Clown_pan/article/details/90544995" target="_blank" rel="noopener">stack使用</a><br><a href="https://blog.csdn.net/cindywry/article/details/51919282" target="_blank" rel="noopener">quene使用</a><br><a href="https://blog.csdn.net/qq_41822647/article/details/84886720" target="_blank" rel="noopener">deque双端队列使用</a></p>
+<p>##二，调试方式总结<br>我竟然连vs2012的基本调试方式都不知道，以前只会断点，然后f5,f10,f11调试，效率特别低，如果遇到大量的循环或者很多数字的运算很费时间。</p>
+<p>命中条件：<br><img src="https://img-blog.csdnimg.cn/20191123184235807.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这玩意是个星号，里面<br><img src="https://img-blog.csdnimg.cn/20191123184332299.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在那个循环里，这个东西运行下来是不停止的，但是每次到这个点都会打出我要的数据：<br><img src="https://img-blog.csdnimg.cn/2019112318450449.png" alt="在这里插入图片描述"><br>直接输出全部每次循环的结果，第一次是没赋值，所以出的不对。</p>
+<p>条件：<br><img src="https://img-blog.csdnimg.cn/20191123184624951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20191123184722756.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>是个十字，到那个条件她才会停止。</p>
+<p>命中次数：<br><img src="https://img-blog.csdnimg.cn/20191123184808998.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTA2Nzg5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这个也是红心和加号，与条件差不多。<br>超好用的工具我以前为啥要一个一个调试，蠢啊实在是。</p>
+<p>##三，一些很零散的知识点：<br>vector,size_t,cout这些东西都是在std的命名空间里的。<br>黑箱测试和白箱测试，分别为不知道里面逻辑和知道里面逻辑，一个是让程序员检查的，看逻辑问题的，一个是让测试程序员测错误的，看鲁棒。<br>const是很有用的，这玩意在传递参数时，可以保护参数不会变。<br>在新定义的类里，this是地址。<br>~是析构函数，和构造函数相反的。做善后，清理用<br><a href="https://blog.csdn.net/chen134225/article/details/81221382" target="_blank" rel="noopener">析构函数什么时候被调用</a></p>
+<p><a href="https://blog.csdn.net/liitdar/article/details/80656156" target="_blank" rel="noopener">C++中的赋值运算符重载函数（operator=）</a><br>这个程序里错的和对的的不同在于，错的是调用的程序默认的，是俩指针指到同一个地方了，然后有一个指针先不用了，程序自动把那个地方的数据删了，所以下面那个找不到位置了。对的那个是自己=赋值的时候自己又整了个地址。</p>
+<p>还有很多东西我还不会，比如虚函数，动态绑定，查看内存，调试堆栈，我都不会，就开始怀疑自己这几年怎么啥都不会。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/mmqrcode1574503522270.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -175,16 +217,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/23/%E9%87%8D%E5%AD%A6c++%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/23/%E9%87%8D%E5%AD%A6c++%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/21/%E7%94%A8%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E7%9A%84%E8%AF%AD%E9%9F%B3%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92%E8%BD%AC%E5%86%99%E4%B8%8E%E7%94%9F%E6%88%90%20/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用科大讯飞的语音库实现语音唤醒转写与生成 </div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -204,323 +305,14 @@
 
 
 
-
   
-    <article id="post-用科大讯飞的语音库实现语音唤醒转写与生成 " class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/21/%E7%94%A8%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E7%9A%84%E8%AF%AD%E9%9F%B3%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92%E8%BD%AC%E5%86%99%E4%B8%8E%E7%94%9F%E6%88%90%20/">用科大讯飞的语音库实现语音唤醒转写与生成 </a>
-    </h1>
   
 
-        
-        <a href="/2019/11/21/%E7%94%A8%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E7%9A%84%E8%AF%AD%E9%9F%B3%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92%E8%BD%AC%E5%86%99%E4%B8%8E%E7%94%9F%E6%88%90%20/" class="archive-article-date">
-  	<time datetime="2019-11-21T01:54:14.553Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mfc调用科大讯飞实现语音生成转写唤醒"><a href="#mfc调用科大讯飞实现语音生成转写唤醒" class="headerlink" title="mfc调用科大讯飞实现语音生成转写唤醒"></a>mfc调用科大讯飞实现语音生成转写唤醒</h2><p>要实现语音合成唤醒转写啥的，微软和谷歌也行，只是我和朋友两人选择了使用科大讯飞，体验还可以。
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/21/%E7%94%A8%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E7%9A%84%E8%AF%AD%E9%9F%B3%E5%BA%93%E5%AE%9E%E7%8E%B0%E8%AF%AD%E9%9F%B3%E5%94%A4%E9%86%92%E8%BD%AC%E5%86%99%E4%B8%8E%E7%94%9F%E6%88%90%20/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-c4d多边形建模（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/21/c4d%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1%EF%BC%88%E4%B8%80%EF%BC%89/">c4d多边形建模（一）</a>
-    </h1>
   
 
-        
-        <a href="/2019/11/21/c4d%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2019-11-21T00:56:02.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="c4d多边形建模"><a href="#c4d多边形建模" class="headerlink" title="c4d多边形建模"></a>c4d多边形建模</h2><p>c4d还是最适合多边形，复杂的精细的东西还是交给zb完成吧
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/21/c4d%E5%A4%9A%E8%BE%B9%E5%BD%A2%E5%BB%BA%E6%A8%A1%EF%BC%88%E4%B8%80%EF%BC%89/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-adobe xd的一些操作总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/adobe%20xd%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/">adobe xd的一些操作总结</a>
-    </h1>
   
 
-        
-        <a href="/2019/11/20/adobe%20xd%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2019-11-20T08:51:56.625Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="adobe-xd的一些操作总结"><a href="#adobe-xd的一些操作总结" class="headerlink" title="adobe xd的一些操作总结"></a>adobe xd的一些操作总结</h2><p>adobe xd是一个做app原型的逻辑软件，现在是免费的，里面很多插件也是免费的，之前我一直是用ps做界面的，但是这个东西适合作图，做界面就会有点麻烦。
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/20/adobe%20xd%E7%9A%84%E4%B8%80%E4%BA%9B%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-web实现三维场景虚拟漫游" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/20/web%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF%E8%99%9A%E6%8B%9F%E6%BC%AB%E6%B8%B8/">web实现三维场景虚拟漫游</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/20/web%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF%E8%99%9A%E6%8B%9F%E6%BC%AB%E6%B8%B8/" class="archive-article-date">
-  	<time datetime="2019-11-20T08:32:15.736Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="WebGL创建模型"><a href="#WebGL创建模型" class="headerlink" title="WebGL创建模型"></a>WebGL创建模型</h2><p>利用WebGL构造一个模型，可以在通过浏览器够从各个角度观察此模型。有简单交互功能。简单的说就是构造一个网页，可以在浏览器里实现虚拟漫游
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/20/web%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%BB%B4%E5%9C%BA%E6%99%AF%E8%99%9A%E6%8B%9F%E6%BC%AB%E6%B8%B8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-processing 写的规律图形运动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/19/processing%20%E5%86%99%E7%9A%84%E8%A7%84%E5%BE%8B%E5%9B%BE%E5%BD%A2%E8%BF%90%E5%8A%A8/">processing 写的规律图形运动</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/19/processing%20%E5%86%99%E7%9A%84%E8%A7%84%E5%BE%8B%E5%9B%BE%E5%BD%A2%E8%BF%90%E5%8A%A8/" class="archive-article-date">
-  	<time datetime="2019-11-19T08:01:11.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="processing-写的规律图形运动"><a href="#processing-写的规律图形运动" class="headerlink" title="processing 写的规律图形运动"></a>processing 写的规律图形运动</h1><p>也是第一次用processing写图形，期间参考了别人的做法，废话不多说，直接开始</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/19/processing%20%E5%86%99%E7%9A%84%E8%A7%84%E5%BE%8B%E5%9B%BE%E5%BD%A2%E8%BF%90%E5%8A%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -543,8 +335,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
