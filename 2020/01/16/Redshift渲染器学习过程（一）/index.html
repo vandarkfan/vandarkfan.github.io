@@ -15,30 +15,30 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Redshift渲染器学习过程（一）我也是第一次想系统地学习一个渲染器，之前我学了点oc，但是找教程有点费劲，因为这个oc现在已经出到4.0了，但是现在我只有2.+的版本，最后就选了redshift。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200116152245.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200116152322.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200116152420.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200116152452.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200116152525.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;image-20200116155419938.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200116155712.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117102352.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117102916.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117103238.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117103528.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117152710.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117152748.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117155635.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117164500.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117164649.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117165100.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117165206.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117165315.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117173045.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200117175142.png">
-<meta property="og:updated_time" content="2020-01-17T10:03:05.687Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;fdae49d6c47116c38701fa6f77d54155_20200116152245.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;5a11107c893c0db8de93ed073950fe36_20200116152322.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;4f681521ad9d43c791365f0043f69c47_20200116152420.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;02fb40078146aa39d97fb0263702165e_20200116152452.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;87d9ab5d1b1f217a8f05ce27a743dfd0_20200116152525.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;4d5a3abc290817ff9a458e634dadc824_image-20200116155419938.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;a97f33097f3b065cfb63a769bcc141eb_20200116155712.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;c525232e2671ae329384aa19e95e54d6_20200117102352.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;0557feba0d8d2a8650acdf25fa6ce311_20200117102916.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;885c658ff2e6f379ca90a1f071c440ac_20200117103238.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;0eac0e61bddcf1f42e12145e68e55898_20200117103528.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;c9fa888b0ad9c138a7d4472f865a5c03_20200117152710.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;84f1b3af99f1ebda347293136cfb378b_20200117152748.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;2dcf3c8c64885417b94c3a447f7a1884_20200117155635.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;9890879367a715a6ddd3424b9fc35981_20200117164500.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;9aa6efbf4c2d342ff318c24eab720f8e_20200117164649.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;099c68e2051273c7c58753a81c250ac0_20200117165100.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;8237fa21829bc041412c64df78519444_20200117165206.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;0ed39af66216b2287b1d3f4e4f670f2b_20200117165315.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;efaad8414b051099e9cc6ff04132ce0e_20200117173045.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;f64f38b27ba8d517e3227b8bdf09c560_20200117175142.png">
+<meta property="og:updated_time" content="2020-02-06T08:46:21.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200116152245.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;fdae49d6c47116c38701fa6f77d54155_20200116152245.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -190,58 +190,58 @@
 <a id="more"></a>
 
 <h2 id="渲染器在c4d中存在的位置"><a href="#渲染器在c4d中存在的位置" class="headerlink" title="渲染器在c4d中存在的位置"></a>渲染器在c4d中存在的位置</h2><p>这个渲染器首先在最上面出现</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200116152245.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/fdae49d6c47116c38701fa6f77d54155_20200116152245.png" alt=""></p>
 <p>其次是渲染器设置里</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200116152322.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/5a11107c893c0db8de93ed073950fe36_20200116152322.png" alt=""></p>
 <p>还有编辑-设置-渲染器里</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200116152420.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/4f681521ad9d43c791365f0043f69c47_20200116152420.png" alt=""></p>
 <p>包括创建材质栏</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200116152452.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/02fb40078146aa39d97fb0263702165e_20200116152452.png" alt=""></p>
 <p>还有标签栏</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200116152525.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/87d9ab5d1b1f217a8f05ce27a743dfd0_20200116152525.png" alt=""></p>
 <p>这几个地方就是redshift所有出现的地方</p>
 <h2 id="初步尝试"><a href="#初步尝试" class="headerlink" title="初步尝试"></a>初步尝试</h2><p>还是那几个点，摄像机用人家的，光用人家的，材质要用人家的</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/image-20200116155419938.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/4d5a3abc290817ff9a458e634dadc824_image-20200116155419938.png" alt=""></p>
 <p>这个场景里面，背景是paper，物体从左到右是铜，玻璃，塑料，注意光的强度和大小否则可能会出现有一片是黑色的，效果很奇怪的状况</p>
 <p>渲染设置调了这个</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200116155712.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/a97f33097f3b065cfb63a769bcc141eb_20200116155712.png" alt=""></p>
 <p>在基本里调了最大和最小采样，12和100，随便调的，不要在意这些细节。</p>
 <h2 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h2><p>这里面的灯光种类和默认的灯光差不多，这里就不说那么多，介绍一下里面的参数的效果</p>
 <p>首先如果场景没灯光，会自动加一个默认的环境光，让你看到物体，加了光之后就会关掉这个环境光。</p>
-<h3 id="灯光相同的参数"><a href="#灯光相同的参数" class="headerlink" title="灯光相同的参数"></a>灯光相同的参数</h3><p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117102352.png" alt=""></p>
+<h3 id="灯光相同的参数"><a href="#灯光相同的参数" class="headerlink" title="灯光相同的参数"></a>灯光相同的参数</h3><p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/c525232e2671ae329384aa19e95e54d6_20200117102352.png" alt=""></p>
 <p>这个是预览，这三个参数的调节都不会影响到最后的结果，就是在预览框（就是最大的那个没渲染的框）里有点变化，第一个是线条，取消了就看不到灯光的照射范围了，灯光多的话嫌烦就去了。第二个是是否有效果，取消了视图就会黑点，没效果了，最后一个调节大小。</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117102916.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/0557feba0d8d2a8650acdf25fa6ce311_20200117102916.png" alt=""></p>
 <p>mode里有俩，一个是颜色，一个是温度，最下面的是衰减距离，decay里面是衰减的方式，线性或者什么，其实保持默认就行。</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117103238.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/885c658ff2e6f379ca90a1f071c440ac_20200117103238.png" alt=""></p>
 <p>这里面的参数就是漫射和镜面，基本去调下面的参数，因为能准确的调，上面那俩对号去了就直接没了，尤其是漫射去了会导致直接黑色。</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117103528.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/0eac0e61bddcf1f42e12145e68e55898_20200117103528.png" alt=""></p>
 <p>这个project很好用的，里面默认是去除，拉个东西进来，直接就这个灯光就没效果了，物体后面那三个东西，应该是材质，阴影，子物体，都有的话就是这个mode起作用，就是这个光对材质，阴影，子物体都没效果了。mode好友一个模式是包括，就是相反，只对这个有效果了。</p>
 <h3 id="不同的灯光效果"><a href="#不同的灯光效果" class="headerlink" title="不同的灯光效果"></a>不同的灯光效果</h3><h4 id="远光灯"><a href="#远光灯" class="headerlink" title="远光灯"></a>远光灯</h4><p>没有衰减，适合大场景打光</p>
 <h4 id="聚光灯"><a href="#聚光灯" class="headerlink" title="聚光灯"></a>聚光灯</h4><p>就手电筒，通常给个目标，打到一个物体身上</p>
 <h4 id="区域光"><a href="#区域光" class="headerlink" title="区域光"></a>区域光</h4><p>可以让一个物体发光，不是只能方块，你甚至可以让你的灯泡模型发光</p>
 <h4 id="天穹光"><a href="#天穹光" class="headerlink" title="天穹光"></a>天穹光</h4><p>这个就是hdr贴图相关操作，需要讲一下</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117152710.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/c9fa888b0ad9c138a7d4472f865a5c03_20200117152710.png" alt=""></p>
 <p>这个就是hdr的图，gamma里可以调亮度，色相，纯度，tint可以直接在渲染的时候给色相变化。</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117152748.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/84f1b3af99f1ebda347293136cfb378b_20200117152748.png" alt=""></p>
 <p>第一个环境是看这个背景有没有图，选了背景才能有图，alpha就是选了背景就是空的，输出的时候有alpha通道，下面的俩就是可以把背景改成其他的图，（我觉得这个功能可能是能省略在ae或者ps里合成的这个步骤，但是实际上省不了，毕竟最后还是要在后期软件里合成），当然这个只改背景，投射到物体上的颜色还是hdr图的颜色。</p>
 <h4 id="IES光"><a href="#IES光" class="headerlink" title="IES光"></a>IES光</h4><p>这个光主要是打床头灯那一类的，就是墙上的，靠近东西的灯，其实看上去还不错，用下载的ies资源，调的时候注意光强和方向，做对的话是这样的。</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117155635.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/2dcf3c8c64885417b94c3a447f7a1884_20200117155635.png" alt=""></p>
 <h4 id="太阳光"><a href="#太阳光" class="headerlink" title="太阳光"></a>太阳光</h4><p>一般情况下是个天空一起用的</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117164500.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/9890879367a715a6ddd3424b9fc35981_20200117164500.png" alt=""></p>
 <p>天空的参数也是中规中矩的，其实看英文基本能知道个大概</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117164649.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/9aa6efbf4c2d342ff318c24eab720f8e_20200117164649.png" alt=""></p>
 <p>四个箭头分别的意思是强度，海平面高度（正常情况下你看的海平面就是0，海平面低的时候你就觉得是在天上），海平面模糊（没模糊的话就是一条很硬的线），第四个就是颜色偏差，能手动改颜色。</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117165100.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/099c68e2051273c7c58753a81c250ac0_20200117165100.png" alt=""></p>
 <p>最主要的是圆盘大小，越大，阴影边缘越柔和</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117165206.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/8237fa21829bc041412c64df78519444_20200117165206.png" alt=""></p>
 <p>这个就是影响啥，影响反射，折射的值，背景那个按钮去了背景就看不到了，但是对物体有影响的（常用）</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117165315.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/0ed39af66216b2287b1d3f4e4f670f2b_20200117165315.png" alt=""></p>
 <p>上图噪点很多，我没把采样调大，真正做东西的时候肯定会调的</p>
 <h4 id="门户光"><a href="#门户光" class="headerlink" title="门户光"></a>门户光</h4><p>这个用的比较少，可以认为是窗户或者门那用的，就是比如说给个物理天空，创建一个密闭的屋子，在窗户的地方放个这个光，可以把外面更多的光吸收过来，屋子会更亮，但是这个光源不会发光的，只会吸收光过来，在窗外一点放。</p>
 <h2 id="摄像机"><a href="#摄像机" class="headerlink" title="摄像机"></a>摄像机</h2><p>rs的摄像机其实就是一般的摄像机加了个rs的标签，所以其实要改都是在rs标签里改</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117173045.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/efaad8414b051099e9cc6ff04132ce0e_20200117173045.png" alt=""></p>
 <p>从上到下依次：感光ISO，快门，光圈大小，白色矫正（一般不变），黑角（这个在ae里做也行，就是四个角变黑，聚焦感）。下面的：最大曝光度（就当作是最大亮度，处理过曝），下面的那些依我看来在ae里也能调</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200117175142.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/f64f38b27ba8d517e3227b8bdf09c560_20200117175142.png" alt=""></p>
 <p>第一个是焦距跟着摄像机的走，一般别动，因为c4d的摄像机能点一下就能让某个物体清晰，可控性高。coc radius虚化大小，其他的别乱动了。基本都可以通过后期的软件达到效果或者效果更好</p>
 
       

@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Redshift学习过程（二）上一章讲了一些基础的，比如摄像机，灯光这种东西。这一章主要讲材质方面">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200118113112.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200118113455.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200118114600.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200118115902.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200118120340.png">
-<meta property="og:updated_time" content="2020-01-19T12:43:18.590Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;ea91e97748bd75320bc861ba0c047414_20200118113112.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;7447d40ccaed091aff37aca28c2c41bb_20200118113455.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;eff3c486f181767cc4786cf95a64d8df_20200118114600.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;2702c5fc831c96fa5c8ec8f28722738d_20200118115902.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;6071a697fa3f5128d33e85e86e185e2a_20200118120340.png">
+<meta property="og:updated_time" content="2020-02-06T08:59:03.793Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;vandarkfan&#x2F;mypicbed&#x2F;master&#x2F;20200118113112.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;ea91e97748bd75320bc861ba0c047414_20200118113112.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -173,17 +173,17 @@
         <h1 id="Redshift学习过程（二）"><a href="#Redshift学习过程（二）" class="headerlink" title="Redshift学习过程（二）"></a>Redshift学习过程（二）</h1><p>上一章讲了一些基础的，比如摄像机，灯光这种东西。这一章主要讲材质方面</p>
 <a id="more"></a>
 
-<h2 id="基础材质"><a href="#基础材质" class="headerlink" title="基础材质"></a>基础材质</h2><h3 id="漫射"><a href="#漫射" class="headerlink" title="漫射"></a>漫射</h3><p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200118113112.png" alt=""></p>
+<h2 id="基础材质"><a href="#基础材质" class="headerlink" title="基础材质"></a>基础材质</h2><h3 id="漫射"><a href="#漫射" class="headerlink" title="漫射"></a>漫射</h3><p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/ea91e97748bd75320bc861ba0c047414_20200118113112.png" alt=""></p>
 <p>第一个是漫射，这个颜色最重要，基本就是大致出来的颜色了，下面的是透光能力，W打满了在模型后面放个白光，整个模型都会过曝，超亮。</p>
-<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200118113455.png" alt=""></p>
+<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/7447d40ccaed091aff37aca28c2c41bb_20200118113455.png" alt=""></p>
 <p>非金属的反射几乎都是白的，金属的颜色基本由反射决定而不是漫射。</p>
 <p>Anisotropy是各向异性，可以用来做拉丝金属，值越高越感觉到emmmm，油光发亮？</p>
 <p>fresnel type是反射的模式，怎么讲IOR是最简单的，里面有种模式比较适合一般人，靠直觉的那种</p>
-<p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200118114600.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/eff3c486f181767cc4786cf95a64d8df_20200118114600.png" alt=""></p>
 <p>下面的颜色，以一个是全部的颜色，第二个是边缘的，反射的颜色。预设里的金属都是这个方式。</p>
-<h3 id="折射"><a href="#折射" class="headerlink" title="折射"></a>折射</h3><p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200118115902.png" alt=""></p>
+<h3 id="折射"><a href="#折射" class="headerlink" title="折射"></a>折射</h3><p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/2702c5fc831c96fa5c8ec8f28722738d_20200118115902.png" alt=""></p>
 <p>折射里就三个参数需要讲，第一个权重，调到满直接就是玻璃了，当然漫射那里的权重要低点，毛玻璃的话漫射那的粗糙调高。第二个色散,dispersion，稍微调一点就会发现白光照到模型上有彩色的感觉。最后一个是是否空心，选了就是空心的。</p>
-<h3 id="次表面散射"><a href="#次表面散射" class="headerlink" title="次表面散射"></a>次表面散射</h3><p><img src="https://raw.githubusercontent.com/vandarkfan/mypicbed/master/20200118120340.png" alt=""></p>
+<h3 id="次表面散射"><a href="#次表面散射" class="headerlink" title="次表面散射"></a>次表面散射</h3><p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/6071a697fa3f5128d33e85e86e185e2a_20200118120340.png" alt=""></p>
 <p>本来就是折射的一种，就归在折射里，次表面散射主要是模拟光进入物体后发生的折射现象，简单的说能做透光不透明的效果</p>
 <p>第一行是衰减模式，推荐第一种，因为第一种直接方便。第二个是什么光能通过物体，表现出来就是颜色是啥，第三个是物体吸收能量的能力，越大出来的光越少，就会越暗。第四个是折射出来的颜色是什么色，第五个就是折射出颜色的强度。</p>
 <h3 id="mulyi-sss"><a href="#mulyi-sss" class="headerlink" title="mulyi-sss"></a>mulyi-sss</h3><p>这个里面的功能其实是次表面散射的扩展。但是这一部分我弄的不太清楚，之后再补充</p>
