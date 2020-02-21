@@ -20,7 +20,12 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;eff3c486f181767cc4786cf95a64d8df_20200118114600.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;2702c5fc831c96fa5c8ec8f28722738d_20200118115902.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;6071a697fa3f5128d33e85e86e185e2a_20200118120340.png">
-<meta property="og:updated_time" content="2020-02-06T08:59:03.793Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200216233623.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200217001428.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200217001631.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200217001846.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200217001948.png">
+<meta property="og:updated_time" content="2020-02-16T16:20:15.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;ea91e97748bd75320bc861ba0c047414_20200118113112.png">
   
@@ -189,7 +194,22 @@
 <h3 id="mulyi-sss"><a href="#mulyi-sss" class="headerlink" title="mulyi-sss"></a>mulyi-sss</h3><p>这个里面的功能其实是次表面散射的扩展。但是这一部分我弄的不太清楚，之后再补充</p>
 <h3 id="coating"><a href="#coating" class="headerlink" title="coating"></a>coating</h3><p>这个里面其实是等于在整个模型上铺了一层，车漆可以用它。</p>
 <h3 id="overall"><a href="#overall" class="headerlink" title="overall"></a>overall</h3><p>这个可以调透明，发光</p>
-<h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2>
+<h2 id="雾（体积光，丁达尔效应）"><a href="#雾（体积光，丁达尔效应）" class="headerlink" title="雾（体积光，丁达尔效应）"></a>雾（体积光，丁达尔效应）</h2><p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200216233623.png" alt=""></p>
+<p>光源那的体积记得贡献值在0以上，否则是不起作用的。</p>
+<p>tint就是颜色偏向，没啥说的。第二个是散射，就看作是强度吧，第三个是衰减数值，越大就越黑，第四个是各向异性，在0以下的话就会出现光的这个朝向是反的</p>
+<p>下面那个雾的效果需要衰减不能是0，是0没效果</p>
+<p>ray contribution是光线的效果，总体调节的</p>
+<h2 id="焦散"><a href="#焦散" class="headerlink" title="焦散"></a>焦散</h2><p>就比如玻璃啥的会把光给透过去映射到别的物体身上</p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200217001428.png" alt=""></p>
+<p>这个焦散在一般情况下，就是你不瞎球调参数的情况下是不会出现的，需要改几个地方才会出现</p>
+<p>在能产生焦散的光上，打开下面这个</p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200217001631.png" alt=""></p>
+<p>然后调到能产生焦散的物体，给他一个redshift object标签</p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200217001846.png" alt=""></p>
+<p>把这个打开，然后跑到渲染设置里</p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200217001948.png" alt=""></p>
+<p>IPR的渐进渲染给关了才行</p>
+
       
 
       
@@ -261,11 +281,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/06/c4d%E9%83%A8%E5%88%86%E7%BB%83%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/06/c4d%E9%83%A8%E5%88%86%E7%BB%83%E4%B9%A0(%E4%B8%80)/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          c4d部分练习
+          c4d部分练习(一)
         
       </div>
     </a>

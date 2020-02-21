@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/2 | Hexo</title>
+  <title>go(二) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;02&#x2F;index.html">
+  <meta name="description" content="go语言学习（内建容器）紧接上一章的基础变量，稍微复杂一点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go(二)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;21&#x2F;go(%E4%BA%8C)&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="go语言学习（内建容器）紧接上一章的基础变量，稍微复杂一点">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200221213327.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200221214926.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200221224600.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200221225301.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200221225900.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200221230258.png">
+<meta property="og:updated_time" content="2020-02-21T16:43:44.274Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;fanimgsave.oss-cn-shenzhen.aliyuncs.com&#x2F;img&#x2F;20200221213327.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -141,130 +151,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-go(二)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      go(二)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/go(%E4%BA%8C)/" class="archive-article-date">
+
+        
+        <a href="/2020/02/21/go(%E4%BA%8C)/" class="archive-article-date">
   	<time datetime="2020-02-21T13:37:47.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/go(%E4%BA%8C)/">go(二)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="go语言学习（内建容器）"><a href="#go语言学习（内建容器）" class="headerlink" title="go语言学习（内建容器）"></a>go语言学习（内建容器）</h1><p>紧接上一章的基础变量，稍微复杂一点</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组和c挺像的</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> arr1 [<span class="number">5</span>]<span class="keyword">int</span></span><br><span class="line">	arr2:=[<span class="number">3</span>]<span class="keyword">int</span>&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;</span><br><span class="line">	arr3:=[...]<span class="keyword">int</span>&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> grid [<span class="number">4</span>][<span class="number">5</span>]<span class="keyword">int</span><span class="comment">//四行五列</span></span><br><span class="line">	fmt.Println(arr1,arr2,arr3,grid)</span><br><span class="line">	<span class="keyword">for</span> i:=<span class="keyword">range</span> arr3 &#123;</span><br><span class="line">		fmt.Println(arr3[i])</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> i,v:=<span class="keyword">range</span> arr3&#123;</span><br><span class="line">		fmt.Println(i,v)</span><br><span class="line">	&#125;<span class="comment">//这里的i,v是第几个和数值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>就像这样，习惯了就行</p>
+<p>数组是值类型</p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200221213327.png" alt=""></p>
+<p>这种情况是不允许的，因为定义func的时候数组大小是5，进去的必须是5.</p>
+<p>而且因为这样传进去的是值，你在这个func里面改数组的值，在外面的值是不会变的，这一点和c++啥的不一样，c++进去后会改变。但是你要是传进去的数组的指针那就会改变了。但是在go语言中一般不直接用数组。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printArray1</span><span class="params">(arr [5]<span class="keyword">int</span>)</span></span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printArray2</span><span class="params">(arr []<span class="keyword">int</span>)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这两个是不一样的，第一个是正经的传数组，第二个是切片操作</p>
+<h2 id="切片（Slice）"><a href="#切片（Slice）" class="headerlink" title="切片（Slice）"></a>切片（Slice）</h2><p>说起来其实也很简单，别看他长这么个吓人的名字</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	arr:=[...]<span class="keyword">int</span>&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;</span><br><span class="line">	fmt.Println(<span class="string">"arr[2:6]="</span>,arr[<span class="number">2</span>:<span class="number">6</span>])</span><br><span class="line">	fmt.Println(<span class="string">"arr[:6]="</span>,arr[:<span class="number">6</span>])</span><br><span class="line">	fmt.Println(<span class="string">"arr[2:]="</span>,arr[<span class="number">2</span>:])</span><br><span class="line">	fmt.Println(<span class="string">"arr[:]="</span>,arr[:])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>出来的结果</p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200221214926.png" alt=""></p>
+<p>要注意的是2：6指的是从第二个到第六个，但是是前包括后不包括[2,6)，这个感觉。</p>
+<p>切片是会改变数组的值的，其实我认为切片有种指针的感觉。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">updata</span><span class="params">(s []<span class="keyword">int</span>)</span></span>&#123;</span><br><span class="line">	s[<span class="number">0</span>]=<span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	arr:=[...]<span class="keyword">int</span>&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>&#125;</span><br><span class="line">	s1:=arr[<span class="number">2</span>:]</span><br><span class="line">	updata(s1)</span><br><span class="line">	fmt.Println(s1)</span><br><span class="line">	fmt.Println(arr)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200221224600.png" alt=""></p>
+<p>所以一般不用数组，用切片</p>
+<p>·<img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200221225301.png" alt=""></p>
+<p>最后的效果为</p>
+<p>s1:2,3,4,5</p>
+<p>s2:5,6</p>
+<p>这个很难说，就是因为s1s2实际上还是和地址有关，表面上是没有但是，要是超出了，还是有灰色地带的。</p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200221225900.png" alt=""></p>
+<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200221230258.png" alt=""></p>
+<p>len和cap都是可以打印出来的，len(s1)，cap(s1)</p>
+<h2 id="切片的操作"><a href="#切片的操作" class="headerlink" title="切片的操作"></a>切片的操作</h2><p>append操作</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/21/go(%E4%BA%8C)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/go(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-02-19T15:45:45.010Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/19/go(%E4%B8%80)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">go(一)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/go(%E4%B8%80)/">go(一)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/c4d%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0(%E4%BA%8C)/" class="archive-article-date">
-  	<time datetime="2020-02-17T09:37:50.816Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/c4d%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0(%E4%BA%8C)/">c4d部分学习(二)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/06/c4d%E9%83%A8%E5%88%86%E7%BB%83%E4%B9%A0(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-02-06T07:14:31.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/06/c4d%E9%83%A8%E5%88%86%E7%BB%83%E4%B9%A0(%E4%B8%80)/">c4d部分练习(一)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -287,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
