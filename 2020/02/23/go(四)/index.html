@@ -6,13 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>go(四) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="面向接口在go中，没有继承和多态，在其他语言中通过继承和多态完成的事情由接口取代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go(四)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;23&#x2F;go(%E5%9B%9B)&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="面向接口在go中，没有继承和多态，在其他语言中通过继承和多态完成的事情由接口取代">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-26T16:41:05.920Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -141,295 +144,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-go(四)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/10/%E4%BA%A4%E4%BA%92%E5%AA%92%E4%BD%93%E4%B8%AD%E6%9C%9F%E6%8A%A5%E5%91%8A/" class="archive-article-date">
-  	<time datetime="2020-05-10T09:19:37.156Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/10/%E4%BA%A4%E4%BA%92%E5%AA%92%E4%BD%93%E4%B8%AD%E6%9C%9F%E6%8A%A5%E5%91%8A/">交互媒体中期报告</a>
+    <h1 class="article-title" itemprop="name">
+      go(四)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/24/c4d%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0(%E4%B8%89)/" class="archive-article-date">
-  	<time datetime="2020-02-24T06:43:48.465Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/24/c4d%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0(%E4%B8%89)/">c4d部分学习(三)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/23/go(%E5%9B%9B)/" class="archive-article-date">
+        
+        <a href="/2020/02/23/go(%E5%9B%9B)/" class="archive-article-date">
   	<time datetime="2020-02-23T11:44:42.204Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/23/go(%E5%9B%9B)/">go(四)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="面向接口"><a href="#面向接口" class="headerlink" title="面向接口"></a>面向接口</h1><p>在go中，没有继承和多态，在其他语言中通过继承和多态完成的事情由接口取代</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="duck-typing"><a href="#duck-typing" class="headerlink" title="duck typing"></a>duck typing</h2><p>很多语言都有这个概念，描述外部行为而非内部结构，go有点类似。</p>
+<p>首先接口是多个type对一个接口，非常的瑟琴，当然一个type也能实现多个接口（我到底在说什么）。差不多是以下形式</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个接口</span></span><br><span class="line"><span class="keyword">type</span> People <span class="keyword">interface</span> &#123;</span><br><span class="line">	ReturnName() <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个结构体</span></span><br><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Student)</span> <span class="title">ReturnName</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span>  s.Name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义结构体的一个方法。</span></span><br><span class="line"><span class="comment">// 突然发现这个方法同接口People的所有方法(就一个)，此时可直接认为结构体Student实现了接口People，我们可以看到这个结构体实现接口的时候，这个形式上是没有接口名字的</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	cbs := Student&#123;Name:<span class="string">"vandarkfan"</span>&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//var a People</span></span><br><span class="line">	<span class="comment">// 因为Students实现了接口所以直接赋值没问题</span></span><br><span class="line">	<span class="comment">// 如果没实现会报错：cannot use cbs (type Student) as type People in assignment:Student does not implement People (missing ReturnName method)</span></span><br><span class="line"><span class="comment">/*	a = cbs</span></span><br><span class="line"><span class="comment">	name := a.ReturnName()*/</span></span><br><span class="line"></span><br><span class="line">	fmt.Println(cbs.ReturnName()) <span class="comment">// 输出"咖啡色的羊驼"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>定义了一个接口之后，想让类型实现接口，idea点击那个“student”会弹出你想实现那个接口，很方便。</p>
+<p>下面是一个类型实现了多个接口，接口是在实现的时候定义的，也就是使用者定义</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> People <span class="keyword">interface</span> &#123;</span><br><span class="line">	ReturnName() <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Role <span class="keyword">interface</span> &#123;</span><br><span class="line">	ReturnRole() <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Student <span class="keyword">struct</span> &#123;</span><br><span class="line">	Name <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Student)</span> <span class="title">ReturnName</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> s.Name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s Student)</span> <span class="title">ReturnRole</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"学生"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line"><span class="comment">/*	cbs := Student&#123;Name: "咖啡色的羊驼"&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	var a People  // 定义a为People接口类型</span></span><br><span class="line"><span class="comment">	var b Role    // 定义b为Role接口类型</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	a = cbs // 由于Student实现了People所有方法，所以接口实现成功，可直接赋值</span></span><br><span class="line"><span class="comment">	b = cbs // 由于Student实现了Role所有方法，所以接口实现成功，可直接赋值</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	name := a.ReturnName()</span></span><br><span class="line"><span class="comment">	fmt.Println(name) // 输出"咖啡色的羊驼"</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">	role := b.ReturnRole()</span></span><br><span class="line"><span class="comment">	fmt.Println(role) // 输出"学生"*/</span></span><br><span class="line">	a:=Student&#123;<span class="string">"vandarkfan"</span>&#125;</span><br><span class="line">	fmt.Println(a.ReturnName())</span><br><span class="line">	fmt.Println(a.ReturnRole())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是截取一个网站的数据，这个网站我截取的是慕课网，很奇怪，b站的不让我截，应该是手段问题，我之前用java截取过，还有一个动漫网站成是成了，但是文字全是乱码，我就奇怪了，那个网站我java也截取过。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"net/http"</span></span><br><span class="line">	<span class="string">"net/http/httputil"</span></span><br><span class="line">	<span class="string">"time"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Reriever <span class="keyword">interface</span> &#123;</span><br><span class="line">	Get(url <span class="keyword">string</span>) <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> Rerieveraaa <span class="keyword">struct</span> &#123;</span><br><span class="line">	UserAgent <span class="keyword">string</span></span><br><span class="line">	TimeOut time.Duration</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(r Rerieveraaa)</span> <span class="title">Get</span><span class="params">(url <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	resp,err:=http.Get(url)<span class="comment">//网址是否能够打开 如果能打开返回结构体指针</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err!=<span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line">	result,err:=httputil.DumpResponse(resp,<span class="literal">true</span>)<span class="comment">//分析结构体指针是否正确 如果正确 返回utf8格式</span></span><br><span class="line">	resp.Body.Close()<span class="comment">//预先处理resp关闭</span></span><br><span class="line">	<span class="keyword">if</span> err!=<span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="built_in">panic</span>(err)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>  <span class="keyword">string</span>(result)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	r:=Rerieveraaa&#123;&#125;</span><br><span class="line">	fmt.Println(r.Get(<span class="string">"http://www.imooc.com"</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后我们来看看这个r是啥</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	r:=Rerieveraaa&#123;&#125;</span><br><span class="line">	r.Get(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">	fmt.Printf(<span class="string">"%T,%v"</span>,r,r)</span><br><span class="line"><span class="comment">//	fmt.Println(r.Get("http://www.baidu.com"))</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>T是类型，v是里面的值。结果：main.Rerieveraaa,{ 0s}</p>
+<p>很明显对应我上面设的类型，UserAgent为空，TimeOut为0s，因为我一开始没设定，设定了就有了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/23/go(%E5%9B%9B)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/22/go(%E4%B8%89)/" class="archive-article-date">
-  	<time datetime="2020-02-22T14:53:03.457Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/02/24/c4d%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0(%E4%B8%89)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          c4d部分学习(三)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/22/go(%E4%B8%89)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">go(三)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/22/go(%E4%B8%89)/">go(三)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/go(%E4%BA%8C)/" class="archive-article-date">
-  	<time datetime="2020-02-21T13:37:47.851Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/go(%E4%BA%8C)/">go(二)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/go(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-02-19T15:45:45.010Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/go(%E4%B8%80)/">go(一)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/c4d%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0(%E4%BA%8C)/" class="archive-article-date">
-  	<time datetime="2020-02-17T09:37:50.816Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/c4d%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0(%E4%BA%8C)/">c4d部分学习(二)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/06/c4d%E9%83%A8%E5%88%86%E7%BB%83%E4%B9%A0(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-02-06T07:14:31.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/06/c4d%E9%83%A8%E5%88%86%E7%BB%83%E4%B9%A0(%E4%B8%80)/">c4d部分练习(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/18/Redshift%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-01-18T03:49:06.921Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/18/Redshift%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">Redshift学习过程（二）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/01/16/Redshift%E6%B8%B2%E6%9F%93%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-01-16T07:58:12.246Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/16/Redshift%E6%B8%B2%E6%9F%93%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">Redshift渲染器学习过程（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -453,8 +322,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
