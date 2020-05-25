@@ -226,52 +226,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一-c4d变形器部分结尾"><a href="#一-c4d变形器部分结尾" class="headerlink" title="一.c4d变形器部分结尾"></a>一.c4d变形器部分结尾</h1><h2 id="样条约束"><a href="#样条约束" class="headerlink" title="样条约束"></a>样条约束</h2><p>对象沿着样条进行变形</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224143009.png" alt=""></p>
-<p>样条就是对照的，样条，导轨控制的是方向，这个感觉很难说，比如你整一个一样的样条然后上下移动</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224143500.png" alt=""></p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224143523.png" alt=""></p>
-<p>当然你也可以控制其中的点让他某一小部分转变。其他的几个东西都很明显，在这里就不解释了。稍微一试就知道。</p>
-<p>模式：保持长度/适合样条，前者物体长度不变，在样条上行走。后者拉伸样条到和样条一样长</p>
-<p>结束模式：延伸/限制，前者偏移到底会沿着切线冲出去，后者会在线条结束的地方直接给你砍掉。</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224144956.png" alt=""></p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224145144.png" alt=""></p>
-<p>注意白线和黑线白线是样条，黑线是导轨。强度100是大小完全顶到，尺寸曲线也可以调某部分的大小，或者你控制点也行。c4d调节这种曲线，按住ctrl点一下是增加点，直接点线是全局调节，其实调起来也挺顺滑的。</p>
-<p>尺寸和样条尺寸是不一样的，尺寸指的是这个物体的尺寸，样条尺寸指的是在整个样条中这个物体的尺寸。</p>
-<p>比如说这个情况</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224150243.png" alt=""></p>
-<p>尺寸那里是全满的，通过调偏移是这样的感觉。</p>
-<p>在底部</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224150406.png" alt=""></p>
-<p>中间</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224150429.png" alt=""></p>
-<p>顶部</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224150446.png" alt=""></p>
-<p>旋转和其他的也基本一样</p>
-<p>最后的固定范围框是很重要的，在做动画的时候经常要用到。比如说你做了一个组，里面有很多物体，你给整个组加效果器（把集合的组再打一个组，把集合组和变形器放在一个这个组下），没选的话在某个物体上打关键帧，整个物体都会动，选了的话只会动那一个。</p>
-<h2 id="摄像机变形器"><a href="#摄像机变形器" class="headerlink" title="摄像机变形器"></a>摄像机变形器</h2><p>这个变形器挺有趣的，但是我现在想不到用法，就是在某一个摄像机的视角下直接改变某个物体。下图是克隆的对象用磁铁瞎球拖的结果</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224165302.png" alt=""></p>
-<h2 id="碰撞"><a href="#碰撞" class="headerlink" title="碰撞"></a>碰撞</h2><p>这个变形器和颤动，样条约束一样，使用频率非常高。（被碰撞的物体加这个效果器）</p>
-<p>碰撞器里把能产生互动的东西放进去</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224171927.png" alt=""></p>
-<p>我是给一个平面碰撞变形器，让球去撞</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224172136.png" alt=""></p>
-<p>这个参数是变形之后恢复原样的速度。0就是不恢复，100就是一过去就迅速恢复，这个东西可以用来做人踩在雪地上，橡皮，印章。0的时候：</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224172227.png" alt=""></p>
-<p>场景设置：</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224172251.png" alt=""></p>
-<p>其实你去改衰减模式，该里面的数值曲线，你甚至可以控制这个球砸下去的坑的样子，比如距离，强度，曲线。砸出来一个坑你还能用雕刻给他加点石头纹理，给他变成个很逼真的陨石坑</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224230508.png" alt=""></p>
-<p>碰撞里的包括属性，可以把选集，对象，鼠标绘制的顶点贴图<img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224231820.png" alt="">也能放进去，啥也没有就是这个组里面都有作用，放进了东西就是只对这里面的东西起作用。</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224232748.png" alt=""></p>
-<p>映射里面这些玩意是放顶点贴图的，就是鼠标绘制一部份区域，可以让你更轻松的控制你的项目，比如衰减，你在你的物体上绘制一个贴图，黄的地方（100）就是完全起效果，红的地方（0）就根本没用就和没碰撞效果器一样。重置就是对象—–重置外形的参数。</p>
-<p>输出里的碰撞和衰减也是有用的，它可以把你做的碰撞区域和衰减区域变成顶点贴图，这个顶点贴图是可以在材质里或者其他地方用的。</p>
-<p>我们就瞎球在平面上点一下做一个顶点贴图（选择—-顶点绘制），然后这个顶点贴图反正是要自动生成的，把他点出来就行，拖到碰撞里，你会发现（我把小球隐藏了）</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224233950.png" alt=""></p>
-<p>下面是生成的衰减贴图</p>
-<p><img src="https://fanimgsave.oss-cn-shenzhen.aliyuncs.com/img/20200224234039.png" alt=""></p>
-<p>碰撞—-高级，这里面的是控制一些物理属性，比如褶皱，像皮革还是纸，有没有拥挤的感觉，这个我还没弄得很清楚，不敢乱说。</p>
-
+        <h1 id="一-c4d变形器部分结尾"><a href="#一-c4d变形器部分结尾" class="headerlink" title="一.c4d变形器部分结尾"></a>一.c4d变形器部分结尾</h1>
+        
       
 
       
